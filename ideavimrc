@@ -1,0 +1,29 @@
+"" Source your .vimrc
+"source ~/.vimrc
+set number
+set relativenumber
+set clipboard=unnamedplus,unnamed,ideaput " integrate with system clipboard
+set scrolloff=5
+set incsearch
+
+let mapleader = " "
+" Don't use Ex mode, use Q for formatting.
+map Q gq
+
+vmap '<' '<gv'
+vmap '>' '>gv'
+vmap <s-tab> '<gv'
+vmap <tab> '>gv'
+
+nnoremap <leader>w :w<CR>
+map <leader>f <Plug>(easymotion-s)
+map <leader>e <Plug>(easymotion-f)
+
+sethandler <c-a> n-v:ide i:vim
+
+inoremap jj <Esc>
+inoremap <c-a> <ESC>0I
+inoremap <c-e> <ESC>$a
+
+set easymotion
+set keep-english-in-normal
