@@ -2,6 +2,7 @@
 
 
 # setup tmux config
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 ln -s ${PWD}/tmux.conf ~/.tmux.conf
 # check if .config exists
 if [ ! -d ~/.config ]; then
