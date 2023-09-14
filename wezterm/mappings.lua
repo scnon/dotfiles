@@ -2,23 +2,34 @@ local wezterm = require 'wezterm'
 local act = wezterm.action
 local M = {}
 
+M.leader = { key = "o", mods = "CTRL" }
+
 local keys = {
-	{ key = "j", mods = "ALT|SHIFT", action = act({ SplitVertical = { domain = "CurrentPaneDomain" } }) },
-	{ key = "l", mods = "ALT|SHIFT", action = act({ SplitHorizontal = { domain = "CurrentPaneDomain" } }) },
-	{ key = "h", mods = "CMD", action = act({ ActivatePaneDirection = "Left" }) },
-	{ key = "l", mods = "CMD", action = act({ ActivatePaneDirection = "Right" }) },
-	{ key = "k", mods = "CMD", action = act({ ActivatePaneDirection = "Up" }) },
-	{ key = "j", mods = "CMD", action = act({ ActivatePaneDirection = "Down" }) },
-  { key = "1", mods = "ALT", action = act({ ActivateTab = 0 }) },
-  { key = "2", mods = "ALT", action = act({ ActivateTab = 1 }) },
-  { key = "3", mods = "ALT", action = act({ ActivateTab = 2 }) },
+	{ key = "h", mods = "LEADER", action = "ShowLauncher" },
+	{ key = "f", mods = "LEADER", action = "QuickSelect" },
+
+	{ key = "j", mods = "LEADER", action = act({ SplitVertical = { domain = "CurrentPaneDomain" } }) },
+	{ key = "l", mods = "LEADER", action = act({ SplitHorizontal = { domain = "CurrentPaneDomain" } }) },
+
+	{ key = "1", mods = "LEADER", action = act({ ActivateTab = 0 }) },
+	{ key = "2", mods = "LEADER", action = act({ ActivateTab = 1 }) },
+	{ key = "3", mods = "LEADER", action = act({ ActivateTab = 2 }) },
+	{ key = "4", mods = "LEADER", action = act({ ActivateTab = 3 }) },
+
+	{ key = "j", mods = "ALT", action = act({ ActivatePaneDirection = "Down" }) },
+	{ key = "k", mods = "ALT", action = act({ ActivatePaneDirection = "Up" }) },
+	{ key = "h", mods = "ALT", action = act({ ActivatePaneDirection = "Left" }) },
+	{ key = "l", mods = "ALT", action = act({ ActivatePaneDirection = "Right" }) },
+
+  	{ key = "+", mods = "ALT", action = act({ ActivateTabRelative = 1 }) },
+  	{ key = "-", mods = "ALT", action = act({ ActivateTabRelative = -1 }) },
 }
 
 local mouse = {
 	{
 		event = { Up = { streak = 1, button = "Right" }},
 		mods = "NONE",
-		action = act({ PasteFrom = "Clipboard" }),
+		action = act({ CopyTo = "ClipboardAndPrimarySelection" }),
 	},
 	{
 		event = { Up = { streak = 1, button = "Left" } },
