@@ -2,10 +2,10 @@ local wezterm = require 'wezterm'
 local act = wezterm.action
 local M = {}
 
-M.leader = { key = "o", mods = "CTRL" }
+M.leader = { key = "i", mods = "CTRL" }
 
 local keys = {
-	{ key = "h", mods = "LEADER", action = "ShowLauncher" },
+	{ key = "c", mods = "LEADER", action = "ShowLauncher" },
 	{ key = "f", mods = "LEADER", action = "QuickSelect" },
 
 	{ key = "j", mods = "LEADER", action = act({ SplitVertical = { domain = "CurrentPaneDomain" } }) },
@@ -16,18 +16,18 @@ local keys = {
 	{ key = "3", mods = "LEADER", action = act({ ActivateTab = 2 }) },
 	{ key = "4", mods = "LEADER", action = act({ ActivateTab = 3 }) },
 
-	{ key = "j", mods = "ALT", action = act({ ActivatePaneDirection = "Down" }) },
-	{ key = "k", mods = "ALT", action = act({ ActivatePaneDirection = "Up" }) },
-	{ key = "h", mods = "ALT", action = act({ ActivatePaneDirection = "Left" }) },
-	{ key = "l", mods = "ALT", action = act({ ActivatePaneDirection = "Right" }) },
+	{ key = "j", mods = "ALT",    action = act({ ActivatePaneDirection = "Down" }) },
+	{ key = "k", mods = "ALT",    action = act({ ActivatePaneDirection = "Up" }) },
+	{ key = "h", mods = "ALT",    action = act({ ActivatePaneDirection = "Left" }) },
+	{ key = "l", mods = "ALT",    action = act({ ActivatePaneDirection = "Right" }) },
 
-  	{ key = "+", mods = "ALT", action = act({ ActivateTabRelative = 1 }) },
-  	{ key = "-", mods = "ALT", action = act({ ActivateTabRelative = -1 }) },
+	{ key = "+", mods = "ALT",    action = act({ ActivateTabRelative = 1 }) },
+	{ key = "-", mods = "ALT",    action = act({ ActivateTabRelative = -1 }) },
 }
 
 local mouse = {
 	{
-		event = { Up = { streak = 1, button = "Right" }},
+		event = { Up = { streak = 1, button = "Right" } },
 		mods = "NONE",
 		action = act({ CopyTo = "ClipboardAndPrimarySelection" }),
 	},
@@ -42,4 +42,3 @@ M.keys = keys
 M.mouse = mouse
 
 return M
-
