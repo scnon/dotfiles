@@ -29,7 +29,15 @@ if wezterm.target_triple == 'x86_64-pc-windows-msvc' then
         label = "Arch",
         args = { "wsl", "-d", "Arch", "zsh" },
     })
-    default_prog = { "wsl", "-d", "Arch", "zsh" }
+    default_prog = {
+        "C:\\Users\\x\\scoop\\apps\\msys2\\current\\msys2_shell.cmd",
+        "-defterm",
+        "-here",
+        "-no-start",
+        "-shell",
+        "zsh",
+        "-mingw64"
+    }
 end
 
 local baseName = function(s)
