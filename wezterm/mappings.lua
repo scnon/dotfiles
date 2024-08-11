@@ -9,7 +9,7 @@ local keys = {
 	{ key = "f", mods = "LEADER", action = "QuickSelect" },
 
 	{ key = "j", mods = "LEADER", action = act({ SplitVertical = { domain = "CurrentPaneDomain" } }) },
-	{ key = "l", mods = "LEADER", action = act({ SplitHorizontal = { domain = "CurrentPaneDomain" } }) },
+	{ key = "h", mods = "LEADER", action = act({ SplitHorizontal = { domain = "CurrentPaneDomain" } }) },
 
 	{ key = "1", mods = "LEADER", action = act({ ActivateTab = 0 }) },
 	{ key = "2", mods = "LEADER", action = act({ ActivateTab = 1 }) },
