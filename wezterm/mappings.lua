@@ -36,6 +36,11 @@ local mouse = {
 		mods = "NONE",
 		action = act({ CompleteSelection = "PrimarySelection" }),
 	},
+	{
+		event = { Up = { streak = 2, button = "Left" } },
+		mods = "CTRL",
+		action = wezterm.action.OpenLinkAtMouseCursor,
+	}
 }
 
 M.keys = keys
