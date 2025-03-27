@@ -9,6 +9,9 @@ if [ ! -d ~/.config ]; then
     mkdir ~/.config
 fi
 
+# zsh plugin
+git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+
 # setup alacritty config
 # ln -s ${PWD}/alacritty ~/.config/alacritty
 
